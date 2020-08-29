@@ -1,17 +1,14 @@
 require_relative "../lib/cruise_ship.rb"
 
+describe "#happy_birthday" do 
+  it "prints out a birthday message to each kid in the birthday_kids hash" do 
+    birthday_kids = {
+      "Timmy" => 9, 
+      "Sarah" => 6, 
+      "Amanda" => 27
+    }
 
-describe "#select_winner" do
-  it "returns the name of the passenger who stays in suite a and whose name begins with the letter 'A'" do 
+    expect{happy_birthday(birthday_kids)}.to output("Happy Birthday Timmy! You are now 9 years old!\nHappy Birthday Sarah! You are now 6 years old!\nHappy Birthday Amanda! You are now 27 years old!\n").to_stdout
 
-    passengers = {
-      suite_a: "Amanda Presley", 
-      suite_b: "Seymour Hoffman", 
-      suite_c: "Alfred Tennyson", 
-      suite_d: "Charlie Chaplin", 
-      suite_e: "Crumpet the Elf"
-      }
-
-    expect(select_winner(passengers)).to eq("Amanda Presley")
   end
 end
